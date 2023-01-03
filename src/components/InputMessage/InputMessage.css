@@ -1,0 +1,23 @@
+.input-message{
+    background-color: var(--secondary-color);
+    height: min(100px, 10%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-message-container{
+    background-color: white;
+    height: min(100px, 10%);
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+.input-message-btn{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    height: min(100px, 10%);
+    padding:1rem;
+}

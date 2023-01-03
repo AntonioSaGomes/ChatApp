@@ -1,0 +1,19 @@
+.menu-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding:2rem;
+    background-color: var(--secondary-color);
+}
+
+.menu-img{
+    width: 24px;
+    height: 24px;
+}
+
+.menu-item:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2rem;
+}
