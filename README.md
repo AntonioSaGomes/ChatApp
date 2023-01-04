@@ -1,13 +1,18 @@
 # Chat App
 
-Welcome to the Chat App! This is a basic chat application built with React.
+Welcome to our chat app! This app was built using React, and features multiple chatrooms where users can discuss a variety of topics.
 
-## Getting Started
+## Live Website
 
-To get started with the app, follow these steps:
+The live version of this app is available at https://chatapp-7770f.web.app/.
 
-1. Clone the repository:
+## Features
 
-```bash
-git clone https://github.com/[your_username]/chat-app.git
-```
+- Multiple chatrooms for discussing politics, sports, technology, and more
+- User authentication using Firebase
+- Data storage using Firebase
+- React Router for handling routes within the app
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
