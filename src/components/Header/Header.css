@@ -1,0 +1,4 @@
+.header{
+    flex-basis: 10%;
+    background-color: var(--main-color);
+}

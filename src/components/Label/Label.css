@@ -1,0 +1,11 @@
+.label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #999;
+    transition: color 0.2s;
+  }
+  
+  .label:hover {
+    color: #3498db;
+  }

@@ -1,0 +1,27 @@
+.chat-room-page{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:1rem;
+}
+
+.chat-room-card{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-rooms-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-rooms-header{
+    padding: 3rem;
+}
+
+.chat-icon{
+    height: 5rem;
+    width: 5rem;
+}

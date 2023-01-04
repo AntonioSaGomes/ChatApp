@@ -1,0 +1,25 @@
+.input-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    transition: border-color 0.2s;
+  }
+  
+  input:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+  
+  input::placeholder {
+    color: #ddd;
+  }
+  
+  input:focus::placeholder {
+    color: transparent;
+  }

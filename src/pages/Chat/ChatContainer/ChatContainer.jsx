@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./ChatContainer.css";
 import { collection, getDocs, addDoc } from "firebase/firestore";
-import { firestore } from "../../firebase";
-import ChatMessage from "../../components/ChatMessage/ChatMessage";
-import InputMessage from "../../components/InputMessage/InputMessage";
-import { chatMessages } from "../../mocks/testData";
-import { useAuth } from "../../hooks/useAuth";
-import * as MessageService from "../../services/messages";
+import { firestore } from "../../../firebase";
+import ChatMessage from "../../../components/ChatMessage/ChatMessage";
+import InputMessage from "../../../components/InputMessage/InputMessage";
+import { useAuth } from "../../../hooks/useAuth";
+import * as MessageService from "../../../services/messages";
+import Header from "../../../components/Header/Header";
+import { useParams } from "react-router-dom";
 
 export default function ChatContainer() {
   const [messages, setMessages] = useState([]);
-  const mockMessage = chatMessages[0];
 
   const { user } = useAuth();
-  console.log(user);
+
+  const { chatRoomId } = useParams();
 
   const sendMessage = async (messageInput) => {
     try {
@@ -52,6 +53,7 @@ export default function ChatContainer() {
 
   return (
     <div className="chat-container">
+      <Header title={chatRoomId} />
       <div className="chat-container-messages">
         {messages.map((chatMessage) => (
           <ChatMessage key={chatMessage.id} chatMessage={chatMessage} />

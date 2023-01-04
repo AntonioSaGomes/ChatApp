@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, getAuth, signOut } from 'firebase/auth';
 
 async function loginWithGoogle() {
     try {
@@ -19,4 +19,10 @@ async function loginWithGoogle() {
     }
 }
 
-export { loginWithGoogle };
+function logOut() {
+    const auth = getAuth();
+    return signOut(auth); 
+}
+
+
+export { loginWithGoogle, logOut };

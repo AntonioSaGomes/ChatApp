@@ -1,0 +1,47 @@
+
+ .home-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    animation: fadein 2s;
+  }
+  
+  .text-description{
+    padding: 2rem;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    color: #666;
+    animation: fadein 2s;
+  }
+  
+  .start-button {
+    font-size: 1rem;
+    font-weight: bold;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #00b0ff;
+    color: #fff;
+    cursor: pointer;
+    animation: fadein 2s;
+  }
+  
+  @keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  
+  
+  
+  

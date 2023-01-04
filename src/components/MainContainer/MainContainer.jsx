@@ -1,17 +1,17 @@
 import React from "react";
 import "./MainContainer.css";
 import { Route, Routes } from "react-router-dom";
-import Login from "../../pages/Login/Login";
-import Profile from "../../pages/Profile/Profile";
-import ChatContainer from "../../pages/ChatContainer/ChatContainer";
+import Chat from "../../pages/Chat/Chat";
+import Settings from "../../pages/Settings/Settings";
+import HomePage from "../../pages/Home/HomePage";
 
 export default function MainContainer() {
   return (
     <div className="main-container">
       <Routes>
-        <Route exact path="/" element={<Login />} />
-        <Route exact path="/chat" element={<ChatContainer />} />
-        <Route exact path="/profile" element={<Profile />} />
+        <Route exact path="/" element={<HomePage />} />
+        <Route exact path="/chat/*" element={<Chat />} />
+        <Route exact path="/settings" element={<Settings />} />
       </Routes>
     </div>
   );

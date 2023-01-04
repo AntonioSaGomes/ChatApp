@@ -1,6 +1,6 @@
 .input-message{
     background-color: var(--secondary-color);
-    height: min(100px, 10%);
+    flex-basis: 10%;
     width: 100%;
     display: flex;
     justify-content: center;
