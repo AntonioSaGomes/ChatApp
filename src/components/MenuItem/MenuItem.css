@@ -6,6 +6,11 @@
     background-color: var(--secondary-color);
 }
 
+.menu-item.hidden{
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
 .menu-img{
     width: 24px;
     height: 24px;
@@ -15,5 +20,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:2rem;
 }

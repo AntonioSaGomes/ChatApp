@@ -10,7 +10,7 @@ export default function SideMenu() {
   };
 
   return (
-    <div className="side-menu">
+    <div className={`side-menu ${isVisible ? "hidden" : ""}`}>
       <div className="side-menu-header clickable" onClick={toggleSidebar}>
         <img className="icon" src="/icons/open-menu.svg"></img>
       </div>

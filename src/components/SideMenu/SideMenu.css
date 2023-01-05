@@ -4,6 +4,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.side-menu.hidden{
+    flex-basis: min(75px, 15%);
+}
+
 .side-menu-header{
     flex-basis: 10%;
     display: flex;
@@ -21,10 +26,6 @@
     flex-grow: 1;
 }
 
-.sidebar-hidden {
-    max-width: 0%;
-    transform: translateX(-50%);
-  }
   
   .sidebar-visible {
     max-width: 100%;
