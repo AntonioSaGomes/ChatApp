@@ -11,10 +11,6 @@
     padding-left: 1rem;
 }
 
-.menu-img{
-    width: 24px;
-    height: 24px;
-}
 
 .menu-item:hover{
     display: flex;

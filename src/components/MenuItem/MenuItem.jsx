@@ -21,7 +21,7 @@ export default function MenuItem({ menuItem, isVisible }) {
       to={menuItem.path}
     >
       <div className={`menu-item ${!isVisible ? "hidden" : ""} clickable`}>
-        <img className="menu-img" src={menuItem.imgSrc} alt="" />
+        <img className="icon" src={menuItem.imgSrc} alt="" />
         {isVisible && <span className="bold ">{menuItem.name}</span>}
       </div>
     </Link>

@@ -7,6 +7,11 @@ export const menuItems = [
     {name: 'Logout', path:'/', imgSrc:"/icons/logout.svg", onClick: logOut}
 ]
 
+export const menuItemGroup = 
+    {groupName: 'Chats', menuItems: menuItems, imgSrc:"/icons/chat.svg"};
+
+
+
 export const currentUser = {id: 'fasok2314kls', name:'John Doe', photo:'/icons/account.svg'}
 
 

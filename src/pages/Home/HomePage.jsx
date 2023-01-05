@@ -1,23 +1,28 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import { useAuth } from "../../hooks/useAuth";
 import "./HomePage.css";
+import GoogleButton from "react-google-button";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleDiscussionButton = () => {
     navigate("/chat");
   };
   return (
     <div className="home-page h-100">
-      <Header />
       <h1 className="title">Welcome to our chat app!</h1>
       <div className="text-description">
         <p className="description">
           Our app features multiple chatrooms where you can discuss a variety of
-          topics with other users. These chatrooms include politics, sports,
-          technology, and much more.
+          topics with other users.
+        </p>
+        <p className="description">
+          These chatrooms include topics such as politics, sports, technology,
+          and much more.
         </p>
         <p className="description">
           Whether you want to share your thoughts on the latest news or just
@@ -29,14 +34,9 @@ const HomePage = () => {
           individuals today!
         </p>
       </div>
-      <button
-        className="start-button"
-        onClick={() => {
-          handleDiscussionButton();
-        }}
-      >
-        Start Discussing
-      </button>
+      <div className="login-container">
+        <GoogleButton onClick={login} />
+      </div>
     </div>
   );
 };

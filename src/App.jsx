@@ -5,8 +5,8 @@ import MainContainer from "./components/MainContainer/MainContainer";
 import "./App.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { getAuth } from "firebase/auth";
-import Login from "./pages/Login/Login";
 import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
+import HomePage from "./pages/Home/HomePage";
 
 function App() {
   const auth = getAuth();
@@ -22,7 +22,7 @@ function App() {
           <MainContainer />
         </>
       )}
-      {!loading && !user && <Login />}
+      {!loading && !user && <HomePage />}
     </div>
   );
 }

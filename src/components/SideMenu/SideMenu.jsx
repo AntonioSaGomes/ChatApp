@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./SideMenu.css";
-import { menuItems } from "../../mocks/testData";
+import { menuItemGroup, menuItems } from "../../mocks/testData";
 import MenuItem from "../MenuItem/MenuItem";
+import MenuItemGroup from "../MenuItem/MenuItemGroup/MenuItemGroup";
 export default function SideMenu() {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -28,6 +29,7 @@ export default function SideMenu() {
             />
           );
         })}
+        <MenuItemGroup menuItemGroup={menuItemGroup} isVisible={isVisible} />
       </div>
     </div>
   );
