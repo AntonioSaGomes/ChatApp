@@ -7,20 +7,23 @@ import InputMessage from "../../../components/InputMessage/InputMessage";
 import { useAuth } from "../../../hooks/useAuth";
 import * as MessageService from "../../../services/messages";
 import Header from "../../../components/Header/Header";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 export default function ChatContainer() {
   const [messages, setMessages] = useState([]);
 
   const { user } = useAuth();
-
   const { chatRoomId } = useParams();
+  const { state } = useLocation();
+
+  let chatRoom = state?.chatRoom;
 
   const sendMessage = async (messageInput) => {
     try {
       const message = {
         content: messageInput,
         senderId: user.uid,
+        chatRoomId,
         date: new Date(),
         photo: user.photo,
         displayName: user.displayName,
@@ -36,9 +39,8 @@ export default function ChatContainer() {
   };
 
   useEffect(() => {
-    const chatId = "aosdiasdl";
     const unsubscribe = MessageService.streamChatMessages(
-      chatId,
+      chatRoomId,
       (querySnapshot) => {
         const updatedMessages = querySnapshot.docs.map((doc) => ({
           ...doc.data(),
@@ -51,9 +53,15 @@ export default function ChatContainer() {
     return unsubscribe;
   }, []);
 
+  useEffect(() => {
+    if (chatRoom == null) {
+      console.log("get from database");
+    }
+  }, []);
+
   return (
     <div className="chat-container">
-      <Header title={chatRoomId} />
+      <Header title={chatRoom?.name} banner={chatRoom?.bannerImg} />
       <div className="chat-container-messages">
         {messages.map((chatMessage) => (
           <ChatMessage key={chatMessage.id} chatMessage={chatMessage} />

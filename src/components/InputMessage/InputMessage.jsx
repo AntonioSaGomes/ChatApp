@@ -6,11 +6,13 @@ export default function InputMessage({ onClickSend }) {
 
   const sendMessage = () => {
     onClickSend(message);
+    setMessage("");
   };
 
   const onKeyDown = (e) => {
     if (e.key === "Enter") {
       onClickSend(message);
+      setMessage("");
     }
   };
   return (
@@ -20,6 +22,7 @@ export default function InputMessage({ onClickSend }) {
         type="text"
         onChange={(e) => setMessage(e.target.value)}
         onKeyDown={onKeyDown}
+        value={message}
       />
       <button
         disabled={message.trim() === ""}

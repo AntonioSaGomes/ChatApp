@@ -1,14 +1,17 @@
 import React from "react";
 import "./ChatRooms.css";
 import { useNavigate } from "react-router-dom";
+import { BASE_ICON_URL } from "../../../common/constants";
 
 export default function ChatRoomCard({ chatRoom }) {
   let navigate = useNavigate();
 
   const goToChatRoom = (chatRoom) => {
-    //TODO: associate chatRoom with ChatContainer
-    console.log(chatRoom);
-    navigate(`/chat/${chatRoom.name}`);
+    navigate(`/chat/${chatRoom.id}`, {
+      state: {
+        chatRoom,
+      },
+    });
   };
 
   return (
@@ -18,7 +21,11 @@ export default function ChatRoomCard({ chatRoom }) {
         goToChatRoom(chatRoom);
       }}
     >
-      <img className="chat-icon" src={chatRoom.img} alt="" />
+      <img
+        className="chat-icon"
+        src={`${BASE_ICON_URL}${chatRoom.imgSrc}`}
+        alt=""
+      />
       <span className="bold">{chatRoom.name}</span>
     </div>
   );
