@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./MainContainer.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Chat from "../../pages/Chat/Chat";
 import Settings from "../../pages/Settings/Settings";
+import { getAuth } from "firebase/auth";
 
 export default function MainContainer() {
   return (

@@ -8,18 +8,24 @@ import { getAuth } from "firebase/auth";
 import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
 import HomePage from "./pages/Home/HomePage";
 
+export const UserContext = React.createContext();
+
 function App() {
   const auth = getAuth();
 
   const [user, loading, error] = useAuthState(auth);
+
+  console.log(user, loading, error);
 
   return (
     <div className="app-container">
       {loading && <LoadingSpinner />}
       {!loading && user && (
         <>
-          <SideMenu />
-          <MainContainer />
+          <UserContext.Provider value={user}>
+            <SideMenu />
+            <MainContainer />
+          </UserContext.Provider>
         </>
       )}
       {!loading && !user && <HomePage />}

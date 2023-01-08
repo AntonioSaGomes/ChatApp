@@ -1,22 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import "./ChatContainer.css";
-import { collection, getDocs, addDoc } from "firebase/firestore";
-import { firestore } from "../../../firebase";
 import ChatMessage from "../../../components/ChatMessage/ChatMessage";
 import InputMessage from "../../../components/InputMessage/InputMessage";
-import { useAuth } from "../../../hooks/useAuth";
+//import { useAuth } from "../../../hooks/useAuth";
 import * as MessageService from "../../../services/messages";
 import Header from "../../../components/Header/Header";
 import { useLocation, useParams } from "react-router-dom";
+import { UserContext } from "../../../App";
 
 export default function ChatContainer() {
   const [messages, setMessages] = useState([]);
 
-  const { user } = useAuth();
+  //const { user } = useAuth(); TODO: check how this works
+  const user = useContext(UserContext);
   const { chatRoomId } = useParams();
   const { state } = useLocation();
+  const chatContainerRef = useRef(null);
 
   let chatRoom = state?.chatRoom;
+
+  const scrollToBottom = () => {
+    //TODO: not going exactly to the bottom
+    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+  };
 
   const sendMessage = async (messageInput) => {
     try {
@@ -25,14 +31,11 @@ export default function ChatContainer() {
         senderId: user.uid,
         chatRoomId,
         date: new Date(),
-        photo: user.photo,
+        photo: user.photoURL,
         displayName: user.displayName,
       };
-      const docRef = await addDoc(
-        collection(firestore, "chatMessages"),
-        message
-      );
-      console.log("Document written with ID: ", docRef.id);
+      MessageService.sendMessage(message);
+      scrollToBottom();
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -62,10 +65,14 @@ export default function ChatContainer() {
   return (
     <div className="chat-container">
       <Header title={chatRoom?.name} banner={chatRoom?.bannerImg} />
-      <div className="chat-container-messages">
-        {messages.map((chatMessage) => (
-          <ChatMessage key={chatMessage.id} chatMessage={chatMessage} />
-        ))}
+      <div ref={chatContainerRef} className="chat-container-messages-wrapper">
+        <div className="chat-container-messages">
+          {messages.map((chatMessage) => {
+            return (
+              <ChatMessage key={chatMessage.id} chatMessage={chatMessage} />
+            );
+          })}
+        </div>
       </div>
       <InputMessage onClickSend={sendMessage} />
     </div>

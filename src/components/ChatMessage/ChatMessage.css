@@ -6,14 +6,19 @@
 }
 
 .chat-message-img{
-    width: 24px;
-    height: 24px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     border: 1px solid blue;
 }
 
+.self{
+    background-color: var(--main-color);
+    align-self: flex-end;
+}
+
 .chat-message-content{
-    flex-grow: 1;
+/*     flex-grow: 1;*/    
     background-color: white;
     border-radius: 10px;
     border: 1px solid grey;
