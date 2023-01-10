@@ -11,6 +11,15 @@ export const menuItemGroup =
     {groupName: 'Chats', menuItems: menuItems, imgSrc:"/icons/chat.svg"};
 
 
+export const appDescription = `Our app features multiple chatrooms where you can discuss a variety of
+topics with other users.
+These chatrooms include topics such as politics, sports, technology,
+and much more.
+Whether you want to share your thoughts on the latest news or just
+have a casual conversation with others who share your interests, our
+chat app has something for everyone.
+So come join the discussion and connect with other like-minded
+individuals today!`
 
 export const currentUser = {id: 'fasok2314kls', name:'John Doe', photo:'/icons/account.svg'}
 

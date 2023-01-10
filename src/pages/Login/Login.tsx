@@ -8,7 +8,7 @@ export default function Login() {
     const { login } = useAuth();
 
     return (
-        <div className='login-page'>
+        <div className='login-page' style={{ backgroundImage: `url(background.jpeg)`}}>
             <div className='login-container'>
                 <GoogleButton onClick={login}/>
             </div>

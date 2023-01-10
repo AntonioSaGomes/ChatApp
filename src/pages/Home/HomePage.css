@@ -5,12 +5,13 @@
     gap: 1rem;
     justify-content: flex-start;
     align-items: center;
+    background-size: 100% 100%;
   }
   
   .title {
     font-size: 2em;
     font-weight: bold;
-    color: #333;
+    color: white;
     animation: fadein 2s;
   }
   
