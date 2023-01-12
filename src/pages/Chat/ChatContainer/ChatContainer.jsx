@@ -28,6 +28,7 @@ export default function ChatContainer() {
   };
 
   const sendMessage = async (messageInput) => {
+    debugger;
     try {
       const message = {
         content: messageInput,
@@ -48,10 +49,12 @@ export default function ChatContainer() {
     const unsubscribe = MessageService.streamChatMessages(
       chatRoomId,
       (querySnapshot) => {
-        const updatedMessages = querySnapshot.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }));
+        const updatedMessages = querySnapshot.docs
+          .map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }))
+          .reverse();
         setMessages(updatedMessages);
         setTimeout(() => {
           scrollToBottom();

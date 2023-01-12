@@ -11,7 +11,6 @@ export default function ChatRooms() {
   useEffect(() => {
     const getRooms = async () => {
       getChatRooms().then((querySnapshot) => {
-        console.log(querySnapshot);
         const chatRoomData = querySnapshot.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
