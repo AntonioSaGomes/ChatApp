@@ -30,11 +30,6 @@ body {
   height: -webkit-fill-available;
 }
 
-#root {
-  width: 100%;
-  height: 100%;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -95,7 +90,6 @@ button:focus-visible {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   line-height: 24px;
   font-weight: 400;
-  height: 100%;
   height: fill-available;
   height: -moz-available;
   height: -webkit-fill-available;
@@ -119,4 +113,13 @@ button:focus-visible {
   :root {
     font-size: 12px;
   }
+}
+
+:root,
+html,
+body,
+#root,
+.app-container {
+  height: 100vh;
+  height: -webkit-fill-available;
 }
