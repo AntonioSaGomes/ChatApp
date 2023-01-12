@@ -21,12 +21,17 @@ export default function ChatRoomCard({ chatRoom }) {
         goToChatRoom(chatRoom);
       }}
     >
-      <img
-        className="chat-icon"
-        src={`${BASE_ICON_URL}${chatRoom.imgSrc}`}
-        alt=""
-      />
-      <span className="bold">{chatRoom.name}</span>
+      <div className="chat-room-card-left">
+        <h3 className="chat-room-card-title bold capitalize">
+          {chatRoom.name}
+        </h3>
+        <img
+          className="chat-icon"
+          src={`${BASE_ICON_URL}${chatRoom.imgSrc}`}
+          alt=""
+        />
+      </div>
+      <div className="chat-room-card-right">{chatRoom.description}</div>
     </div>
   );
 }

@@ -17,6 +17,7 @@
   background-color: white;
   height: calc(100% - 2rem);
   flex-grow: 1;
+  color: black;
   padding: 1rem;
 }
 
