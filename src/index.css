@@ -24,11 +24,11 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
   height: 100vh;
   width: 100vw;
   height: fill-available;
-  height: webkit-fill-available;
+  height: -moz-available;
+  height: -webkit-fill-available;
 }
 
 #root {
@@ -97,6 +97,7 @@ button:focus-visible {
   font-weight: 400;
   height: 100vh;
   height: fill-available;
+  height: -moz-available;
   height: -webkit-fill-available;
   background-color: var(--main-color);
   color-scheme: light dark;
