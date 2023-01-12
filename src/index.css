@@ -119,7 +119,10 @@ button:focus-visible {
 html,
 body,
 #root,
-.app-container {
+.side-menu,
+.main-container,
+.chat-container .app-container {
   height: 100vh;
+  width: 100%;
   height: -webkit-fill-available;
 }
