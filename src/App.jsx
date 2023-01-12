@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import SideMenu from "./components/SideMenu/SideMenu";
 import MainContainer from "./components/MainContainer/MainContainer";

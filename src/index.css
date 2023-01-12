@@ -24,8 +24,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  height: 100vh;
-  width: 100vw;
+  height: var(--app-height);
   height: fill-available;
   height: -moz-available;
   height: -webkit-fill-available;
@@ -92,10 +91,11 @@ button:focus-visible {
   --secondary-color: #add4f2;
   --text-color: white;
   --chat-text-color: black;
+  --app-height: 100%;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   line-height: 24px;
   font-weight: 400;
-  height: 100vh;
+  height: 100%;
   height: fill-available;
   height: -moz-available;
   height: -webkit-fill-available;
