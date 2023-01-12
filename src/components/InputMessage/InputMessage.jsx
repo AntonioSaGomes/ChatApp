@@ -29,7 +29,11 @@ export default function InputMessage({ onClickSend }) {
         className="input-message-btn"
         onClick={sendMessage}
       >
-        <img className="icon" src="/icons/send-message.svg" />
+        <img
+          disabled={message.trim() === ""}
+          className="icon"
+          src="/icons/send-message.svg"
+        />
       </button>
     </div>
   );

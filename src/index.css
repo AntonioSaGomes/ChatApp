@@ -44,9 +44,8 @@ button:hover {
 }
 
 button:disabled {
-  opacity: 0.3;
   cursor: default;
-  border: 0px;
+  opacity: 0.3;
 }
 
 button:focus,
@@ -55,12 +54,6 @@ button:focus-visible {
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --main-color: darkblue;
-    --secondary-color: #add4f2;
-    --text-color: white;
-    --chat-text-color: black;
-  }
   a:hover {
     color: #747bff;
   }
@@ -87,12 +80,15 @@ button:focus-visible {
 }
 
 :root {
+  --main-color: darkblue;
+  --secondary-color: #add4f2;
+  --text-color: white;
+  --chat-text-color: black;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   background-color: var(--main-color);
-
   color-scheme: light dark;
   color: var(--text-color);
   height: 100vh;
