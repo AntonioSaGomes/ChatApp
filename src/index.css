@@ -24,10 +24,6 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  height: var(--app-height);
-  height: fill-available;
-  height: -moz-available;
-  height: -webkit-fill-available;
 }
 
 button {
