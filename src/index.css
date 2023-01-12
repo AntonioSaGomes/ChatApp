@@ -86,13 +86,9 @@ button:focus-visible {
   --secondary-color: #add4f2;
   --text-color: white;
   --chat-text-color: black;
-  --app-height: 100%;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   line-height: 24px;
   font-weight: 400;
-  height: fill-available;
-  height: -moz-available;
-  height: -webkit-fill-available;
   background-color: var(--main-color);
   color-scheme: light dark;
   color: var(--text-color);
