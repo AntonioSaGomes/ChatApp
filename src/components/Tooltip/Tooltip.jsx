@@ -23,7 +23,7 @@ const Tooltip = (props) => {
       >
         {props.children}
       </span>
-      {visible && (
+      {
         <div
           className="tooltip-overlay"
           onMouseEnter={showTooltip}
@@ -31,7 +31,7 @@ const Tooltip = (props) => {
         >
           <div className="tooltip-text">{text}</div>
         </div>
-      )}
+      }
     </div>
   );
 };

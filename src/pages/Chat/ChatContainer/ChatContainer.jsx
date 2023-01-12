@@ -7,9 +7,12 @@ import * as MessageService from "../../../services/messages";
 import Header from "../../../components/Header/Header";
 import { useLocation, useParams } from "react-router-dom";
 import { UserContext } from "../../../App";
+import LoadingSpinner from "../../../components/LoadingSpinner/LoadingSpinner";
+import { getChatRoom } from "../../../services/chatRoom";
 
 export default function ChatContainer() {
   const [messages, setMessages] = useState([]);
+  const [loadingMessages, setLoadingMessages] = useState(true);
 
   //const { user } = useAuth(); TODO: check how this works
   const user = useContext(UserContext);
@@ -50,15 +53,29 @@ export default function ChatContainer() {
           id: doc.id,
         }));
         setMessages(updatedMessages);
+        setTimeout(() => {
+          scrollToBottom();
+          setLoadingMessages(false);
+        }, 0);
       },
       (error) => console.log(error)
     );
     return unsubscribe;
   }, []);
 
+  const fetchChatRoom = () => {
+    getChatRoom(chatRoomId)
+      .then((doc) => {
+        chatRoom = {
+          id: doc.id,
+          ...doc.data(),
+        };
+      })
+      .catch();
+  };
   useEffect(() => {
     if (chatRoom == null) {
-      console.log("get from database");
+      fetchChatRoom();
     }
   }, []);
 
@@ -66,7 +83,11 @@ export default function ChatContainer() {
     <div className="chat-container">
       <Header title={chatRoom?.name} banner={chatRoom?.bannerImg} />
       <div ref={chatContainerRef} className="chat-container-messages-wrapper">
-        <div className="chat-container-messages">
+        {loadingMessages && <LoadingSpinner />}
+        <div
+          className="chat-container-messages"
+          style={{ visibility: loadingMessages ? "hidden" : "visible" }}
+        >
           {messages.map((chatMessage) => {
             return (
               <ChatMessage key={chatMessage.id} chatMessage={chatMessage} />

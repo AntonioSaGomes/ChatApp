@@ -6,7 +6,16 @@ import Switch from "../../components/Switch/Switch";
 import "./Settings.css";
 
 export default function Settings() {
-  const languages = ["PT", "EN"];
+  const languages = [
+    {
+      label: "PT",
+      value: "PT",
+    },
+    {
+      label: "EN",
+      value: "EN",
+    },
+  ];
   const selectedLanguage = languages[0]; //TODO: change this;
 
   return (

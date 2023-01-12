@@ -15,8 +15,6 @@ function App() {
 
   const [user, loading, error] = useAuthState(auth);
 
-  console.log(user, loading, error);
-
   return (
     <div className="app-container">
       {loading && <LoadingSpinner />}

@@ -6,10 +6,6 @@ const Select = ({
   placeholder,
   selectedOption: initialSelectedOption,
 }) => {
-  console.log("options", options);
-  console.log(placeholder);
-  console.log(initialSelectedOption);
-
   const [selectedOption, setSelectedOption] = useState(
     initialSelectedOption || null
   );

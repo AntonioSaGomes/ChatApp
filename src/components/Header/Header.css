@@ -1,4 +1,4 @@
-.header{
-    flex-basis: 10%;
-    background-color: var(--main-color);
+.header {
+  flex-basis: 10%;
+  background-size: 100% 100%;
 }

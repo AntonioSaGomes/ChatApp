@@ -11,15 +11,11 @@ export default function SideMenu() {
   };
 
   return (
-    <div className={`side-menu ${isVisible ? "hidden" : ""}`}>
+    <div className={`side-menu ${isVisible ? "" : "hidden"}`}>
       <div className="side-menu-header clickable" onClick={toggleSidebar}>
         <img className="icon" src="/icons/open-menu.svg"></img>
       </div>
-      <div
-        className={`side-menu-content ${
-          isVisible ? "sidebar-visible" : "sidebar-hidden"
-        }`}
-      >
+      <div className="side-menu-content">
         {menuItems.map((menuItem) => {
           return (
             <MenuItem
@@ -29,7 +25,8 @@ export default function SideMenu() {
             />
           );
         })}
-        <MenuItemGroup menuItemGroup={menuItemGroup} isVisible={isVisible} />
+        {/*         <MenuItemGroup menuItemGroup={menuItemGroup} isVisible={isVisible} />
+         */}{" "}
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
-import { collection, onSnapshot, query, orderBy,where, addDoc } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy,where, addDoc, limit } from "firebase/firestore";
 import { firestore } from "../firebase";
 
 
 export const streamChatMessages = (chatRoomId, snapshot, error) =>{
         const itemsColRef = collection(firestore, 'chatMessages')
-        const itemsQuery = query(itemsColRef, where("chatRoomId", "==", chatRoomId),  orderBy('date'))
+        const itemsQuery = query(itemsColRef, where("chatRoomId", "==", chatRoomId),  orderBy('date'), limit(10))
         return onSnapshot(itemsQuery, snapshot, error);
 };
 

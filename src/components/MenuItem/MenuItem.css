@@ -1,19 +1,23 @@
-.menu-item{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding:2rem;
-    background-color: var(--secondary-color);
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  width: calc(100%);
+  gap: 1rem;
 }
 
-.menu-item.hidden{
-    padding-right: 1rem;
-    padding-left: 1rem;
+a {
+  width: 100%;
 }
 
+.menu-item.hidden {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
 
-.menu-item:hover{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width: 800px) {
+  .menu-item-desc {
+    display: none;
+  }
 }
