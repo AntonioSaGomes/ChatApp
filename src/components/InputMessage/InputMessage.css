@@ -1,7 +1,7 @@
 .input-message {
   background-color: var(--secondary-color);
-  flex-basis: 10%;
   width: 100%;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +13,7 @@
 .button-wrapper {
   height: calc(100% - 2rem);
 }
+
 .input-message-container {
   background-color: white;
   height: calc(100% - 2rem);

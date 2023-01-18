@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../../components/Header/Header";
-import { chatRooms } from "../../../mocks/testData";
 import { getChatRooms } from "../../../services/chatRoom";
 import ChatRoomCard from "./ChatRoomCard";
 import "./ChatRooms.css";
@@ -23,7 +22,7 @@ export default function ChatRooms() {
 
   return (
     <div className="chat-room-page">
-      <Header title="ChatRooms" />
+      <Header title="ChatRooms" arrow={false} />
       <div className="chat-rooms-container">
         {chatRooms?.map((chatRoom) => (
           <ChatRoomCard key={chatRoom.name} chatRoom={chatRoom} />

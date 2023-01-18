@@ -21,7 +21,8 @@ function App() {
       {!loading && user && (
         <>
           <UserContext.Provider value={user}>
-            <SideMenu />
+            {/*             <SideMenu />
+             */}{" "}
             <MainContainer />
           </UserContext.Provider>
         </>

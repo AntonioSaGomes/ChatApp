@@ -34,5 +34,5 @@ export const chatRooms = [
     {name:"sports", img:'/icons/sports.svg'}, 
     {name:"politics", img:'/icons/politics.svg'},
      {name:"animals", img:'/icons/animals.svg'}, 
-     {name:"technology", img:'/icons/technology.svg'}
-    ]
+/*      {name:"technology", img:'/icons/technology.svg'}
+ */    ]

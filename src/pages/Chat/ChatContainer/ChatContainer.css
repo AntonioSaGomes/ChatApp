@@ -4,6 +4,7 @@
   background-color: var(--main-color);
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 }
 
 .chat-container-messages-wrapper {

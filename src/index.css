@@ -46,11 +46,6 @@ button:disabled {
   opacity: 0.3;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 @media (prefers-color-scheme: light) {
   a:hover {
     color: #747bff;
@@ -112,10 +107,8 @@ html,
 body,
 #root,
 .side-menu,
-.app-container,
 .main-container,
-.chat-container .app-container {
+.chat-container {
   height: 100%;
   width: 100%;
-  height: -webkit-fill-available;
 }
