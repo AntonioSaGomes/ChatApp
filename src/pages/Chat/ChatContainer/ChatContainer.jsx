@@ -98,7 +98,7 @@ export default function ChatContainer() {
           })}
         </div>
       </div>
-      <InputMessage onClickSend={sendMessage} />
+      <InputMessage onClickSend={sendMessage} emojiBox={true} />
     </div>
   );
 }

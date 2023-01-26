@@ -8,6 +8,19 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   color: var(--chat-text-color);
+  gap: 0.5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.EmojiPickerReact {
+  position: absolute !important;
+  top: -300px;
+  right: 10px;
+}
+.emoji-icon {
+  height: 2rem;
+  width: 2rem;
 }
 
 .button-wrapper {
@@ -20,14 +33,20 @@
   flex-grow: 1;
   color: black;
   padding: 1rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
 }
 
 .input-message-btn {
-  background-color: white;
+  background-color: transparent;
   display: flex;
   align-items: center;
   height: 100%;
   border: 0px;
   border-radius: 0px;
   padding: 1rem;
+}
+
+.emojiWrapper {
+  display: flex;
 }
